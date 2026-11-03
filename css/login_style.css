@@ -1,0 +1,217 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: Segoe UI, Tahoma, sans-serif;
+    width: 100%; height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #071a0e;
+    overflow: hidden;
+}
+
+/* ── Background ── */
+.background-container {
+    position: fixed; inset: 0; z-index: 0;
+}
+.bg-image {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0.15;
+    filter: saturate(0.3) brightness(0.5);
+}
+.overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, #040f07 0%, #0d2b18 60%, #040f07 100%);
+    opacity: 0.9;
+}
+
+/* ── Particles ── */
+.particles { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.particle {
+    position: absolute; border-radius: 50%;
+    background: #1baa5d; opacity: 0;
+    animation: float-up linear infinite;
+}
+@keyframes float-up {
+    0%   { opacity: 0; transform: translateY(0); }
+    15%  { opacity: 0.5; }
+    85%  { opacity: 0.15; }
+    100% { opacity: 0; transform: translateY(-100vh); }
+}
+
+/* ── Wrapper ── */
+.login-wrapper {
+    position: relative; z-index: 10;
+    width: 100%; height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    padding: 20px;
+}
+
+/* ── Card ── */
+.login-card {
+    width: 100%; max-width: 440px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(27,170,93,0.25);
+    border-radius: 24px;
+    padding: 44px 40px 36px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 32px 80px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.07);
+    animation: card-in 0.6s cubic-bezier(0.22,1,0.36,1) both;
+}
+@keyframes card-in {
+    from { opacity: 0; transform: translateY(28px) scale(0.97); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ── Brand ── */
+.brand-header { text-align: center; margin-bottom: 32px; }
+
+.brand-logo {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 62px; height: 62px;
+    background: linear-gradient(135deg, #1baa5d, #0d6b38);
+    border-radius: 18px; margin-bottom: 14px;
+    box-shadow: 0 8px 28px rgba(27,170,93,0.45);
+    font-size: 1.8rem; color: #fff;
+}
+
+.brand-title {
+    font-size: 1.55rem; font-weight: 800;
+    color: #fff; letter-spacing: 1.5px;
+    line-height: 1.1;
+}
+.brand-title span { color: #1baa5d; }
+.brand-subtitle {
+    font-size: 0.72rem; color: rgba(255,255,255,0.3);
+    letter-spacing: 3.5px; text-transform: uppercase; margin-top: 5px;
+}
+
+/* ── Divider ── */
+.divider {
+    height: 1px; margin: 0 0 24px;
+    background: linear-gradient(to right, transparent, rgba(27,170,93,0.35), transparent);
+}
+
+/* ── Form heading ── */
+.form-heading {
+    font-size: 0.72rem; font-weight: 700;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px;
+}
+
+/* ── Input groups ── */
+.input-group { margin-bottom: 16px; }
+.input-group label {
+    display: block;
+    font-size: 0.7rem; font-weight: 700;
+    color: rgba(255,255,255,0.45);
+    text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 7px;
+}
+
+/* Icon + input in a row */
+.input-wrap {
+    display: flex; align-items: center;
+    background: rgba(255,255,255,0.06);
+    border: 1.5px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    transition: all 0.25s;
+    overflow: hidden;
+}
+.input-wrap:focus-within {
+    border-color: #1baa5d;
+    background: rgba(27,170,93,0.09);
+    box-shadow: 0 0 0 4px rgba(27,170,93,0.13);
+}
+
+.input-icon {
+    padding: 0 14px;
+    font-size: 1.05rem;
+    color: rgba(27,170,93,0.7);
+    flex-shrink: 0;
+    user-select: none;
+}
+
+.input-group input,
+.input-group select {
+    flex: 1;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 0.92rem;
+    font-family: Segoe UI, Tahoma, sans-serif;
+    font-weight: 500;
+    padding: 0 14px 0 0;
+}
+.input-group select option { background: #0d2b18; color: #fff; }
+.input-group input::placeholder { color: rgba(255,255,255,0.2); }
+
+.toggle-password {
+    padding: 0 14px;
+    cursor: pointer;
+    color: rgba(255,255,255,0.25);
+    font-size: 1rem;
+    flex-shrink: 0;
+    transition: color 0.2s;
+    user-select: none;
+}
+.toggle-password:hover { color: #1baa5d; }
+
+/* ── Error ── */
+.error-msg {
+    display: none;
+    background: rgba(220,53,69,0.13);
+    border: 1px solid rgba(220,53,69,0.35);
+    border-radius: 10px;
+    padding: 10px 14px;
+    color: #ff6b7a;
+    font-size: 0.82rem; font-weight: 600;
+    margin-bottom: 14px; text-align: center;
+    animation: shake 0.4s ease;
+}
+.error-msg.show { display: block; }
+@keyframes shake {
+    0%,100% { transform: translateX(0); }
+    25%      { transform: translateX(-6px); }
+    75%      { transform: translateX(6px); }
+}
+
+/* ── Button ── */
+.btn-signin {
+    width: 100%; height: 50px;
+    border: none; border-radius: 12px;
+    background: linear-gradient(135deg, #1baa5d, #0d7a40);
+    color: #fff;
+    font-family: Segoe UI, Tahoma, sans-serif;
+    font-size: 0.88rem; font-weight: 800;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    cursor: pointer; margin-top: 8px;
+    box-shadow: 0 4px 20px rgba(27,170,93,0.4);
+    transition: all 0.3s;
+    position: relative; overflow: hidden;
+}
+.btn-signin:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(27,170,93,0.55);
+}
+.btn-signin:active { transform: translateY(0); }
+.btn-signin:disabled { opacity: 0.65; cursor: not-allowed; }
+
+/* ── Footer ── */
+.footer-text {
+    text-align: center; margin-top: 22px;
+    font-size: 0.8rem; color: rgba(255,255,255,0.28);
+}
+.footer-text a { color: #1baa5d; font-weight: 700; text-decoration: none; }
+.footer-text a:hover { color: #2ecc71; }
+
+/* ── Home icon ── */
+.home-icon {
+    position: fixed; top: 26px; right: 34px;
+    color: rgba(255,255,255,0.25); font-size: 1.3rem;
+    z-index: 100; text-decoration: none; transition: all 0.3s;
+}
+.home-icon:hover { color: #1baa5d; transform: scale(1.15); }

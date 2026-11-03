@@ -1,0 +1,178 @@
+/* GLOBAL RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: #000;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* BACKGROUND & OVERLAY */
+.background-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Balanced darkness */
+}
+
+/* ORGANIZED TOP HOME ICON */
+.home-icon {
+    position: fixed;
+    top: 30px;
+    right: 40px;
+    color: white;
+    font-size: 2.2rem;
+    z-index: 100;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.home-icon:hover {
+    transform: scale(1.1);
+    color: #1baa5d;
+}
+
+/* CENTERED WRAPPER */
+.register-wrapper {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Perfectly centers the form horizontally */
+    padding: 0 20px;
+}
+
+/* BIG CENTERED CARD */
+.register-card {
+    background: rgba(225, 225, 225, 0.96); 
+    padding: 50px 60px;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 520px; /* Large form width */
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* ORGANIZED BRAND HEADER */
+.brand-header {
+    display: flex;
+    align-items: center; /* Vertically aligns + icon and text */
+    gap: 15px;
+    margin-bottom: 5px;
+}
+
+.logo-icon {
+    color: #1baa5d;
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.brand-title {
+    font-weight: 800;
+    font-size: 1.8rem;
+    color: #000;
+    white-space: nowrap;
+}
+
+.brand-title span {
+    color: #1baa5d;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 13px;
+    margin-left: 55px; /* Aligns under the title, skipping the icon */
+    margin-bottom: 30px;
+}
+
+/* FORM FIELDS */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.input-group input, 
+.input-group select {
+    width: 100%;
+    height: 50px;
+    border-radius: 30px;
+    border: 1px solid #ddd;
+    padding: 0 20px;
+    background: #fff;
+    outline: none;
+    font-size: 1rem;
+}
+
+/* ORGANIZED PASSWORD ICON */
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+    color: #777;
+    font-size: 1.1rem;
+    z-index: 10;
+}
+
+/* BUTTON STYLING */
+.btn-register {
+    width: 100%;
+    height: 52px;
+    border-radius: 30px;
+    border: none;
+    background: #168730;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.btn-register:hover {
+    background: #1baa5d;
+    transform: translateY(-2px);
+}
+
+.footer-text {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 1rem;
+}
+
+.footer-text a {
+    color: #1baa5d;
+    font-weight: 700;
+    text-decoration: none;
+}   

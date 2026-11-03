@@ -1,0 +1,130 @@
+/* GLOBAL STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #000; /* Dark fallback */
+    overflow: hidden; /* Prevent scrolling for the landing page */
+}
+
+/* APP BAR (HEADER) */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 120px; /* toolbarHeight equivalent */
+    display: flex;
+    align-items: center;
+    background-color: rgba(10, 49, 3, 0.3); /* Color.fromARGB(73, 10, 49, 3) */
+    padding: 0 50px;
+    z-index: 100;
+}
+
+.app-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo {
+    height: 50px; /* screenHeight * 0.06 equivalent */
+}
+
+.brand-name {
+    color: white;
+    font-size: 1.8rem; /* screenWidth * 0.026 equivalent */
+    font-weight: 700;
+}
+
+/* BUTTONS */
+.btn {
+    border: none;
+    border-radius: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-nav {
+    background-color: #2f7b33;
+    color: #efebeb;
+    padding: 12px 30px;
+    margin-left: 15px;
+    font-size: 1rem;
+}
+
+.btn-get-started {
+    background-color: #2e7d32;
+    color: white;
+    padding: 16px 40px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+}
+
+.btn:hover {
+    filter: brightness(1.2);
+    transform: translateY(-2px);
+}
+
+/* HERO / STACK SECTION */
+.hero {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    /* BOX FIT COVER EQUIVALENT */
+    background: url('../assets/logo3.png') center center / cover no-repeat;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Opacity(0.4) */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative; /* Sit on top of overlay */
+    z-index: 2;
+    max-width: 600px;
+    margin-bottom: -150px; /* Spacer(height: 149) equivalent */
+}
+
+.hero-content h1 {
+    color: white;
+    font-size: 4rem; /* 46-60px range */
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    color: rgba(255, 255, 255, 0.7); /* Colors.white70 */
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 40px;
+}
+
+/* MOBILE RESPONSIVENESS (LayoutBuilder equivalent) */
+@media (max-width: 800px) {
+    .brand-name { font-size: 1.2rem; }
+    .hero-content h1 { font-size: 2.5rem; }
+    header { padding: 0 20px; }
+    .btn-nav { padding: 8px 15px; font-size: 0.8rem; }
+}
