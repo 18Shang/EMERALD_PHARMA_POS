@@ -21,4 +21,6 @@ if ($conn->connect_error) {
     ]);
     exit;
 }
+// ── Anthropic API Key (for medicine image validation) ──────────
+define('ANTHROPIC_API_KEY', 'YOUR_ANTHROPIC_API_KEY_HERE');
 ?>
